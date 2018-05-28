@@ -34,6 +34,7 @@ public class UploadedTestGroupController {
     public UploadedTestGroupController(KafkaTemplate<String, String> template) {
         this.template = template;
     }
+
     @KafkaListener(topics = "${consumer-topic}")
     public void subscribeToEvents(ConsumerRecord<?, ?> cr) {
         logger.info("");
