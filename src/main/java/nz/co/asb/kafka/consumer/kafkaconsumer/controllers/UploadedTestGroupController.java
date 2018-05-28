@@ -18,6 +18,7 @@ import java.util.stream.IntStream;
 
 /**
  * Controller used for testing Spring kafka functionality
+ *
  * @author Max Tuzzolino
  */
 
@@ -37,7 +38,6 @@ public class UploadedTestGroupController {
 
     @KafkaListener(topics = "${consumer-topic}")
     public void subscribeToEvents(ConsumerRecord<?, ?> cr) {
-        logger.info("");
         logger.info("------------------ MESSAGE ---------------------");
         logger.info("Message Received on Topic: " + cr.topic());
         logger.info(cr.value().toString());
@@ -46,6 +46,7 @@ public class UploadedTestGroupController {
 
     /**
      * Super basic producer example executed through HTTP PUT call i.e. $ curl -XPUT localhost:8080
+     *
      * @return Response entity
      */
     @RequestMapping(method = RequestMethod.PUT)

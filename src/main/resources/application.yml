@@ -5,5 +5,5 @@ spring:
       group-id: ${KAFKA_GROUP_ID:testingGroup}
       auto-offset-reset: ${OFFSET-RESET:earliest}
     bootstrap-servers: ${KAFKA_SERVERS:localhost:9092}
-consumer-topic: ${CONSUMER_TOPIC:TestTopic}
+consumer-topic: ${CONSUMER_TOPIC:TestTopic2}
 producer-topic: ${PRODUCER_TOPIC:TestTopic}
