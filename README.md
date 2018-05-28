@@ -27,15 +27,15 @@ Comma separated list of Kafka servers. Default: localhost
 
 `CONSUMER_TOPIC`
 
-Topic you want to consume. Default: testTopic2
+Topic you want to consume. Default: `testTopic2`
 
 `PRODUCER_TOPIC`
 
-Topic you want to produce message for. Default: testTopic
+Topic you want to produce message for. Default: `testTopic`
 
-`MESSAGE_COUNT`
+`MESSAGE_COUNT` (integer)
 
-For producer. How many JSON messages you want to to test.
+For producer. How many JSON messages you want to send. Default: `100,000`
 
 ### Test Consumer 
 Set `CONSUMER_TOPIC` to whatever topic you want to subscribe to. The listener will pick and print all message values to sysout. 
