@@ -1,14 +1,11 @@
 package nz.co.asb.kafka.consumer.kafkaconsumer.controllers;
 
-
-import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -16,15 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.stream.IntStream;
 
-/**
- * Controller used for testing Spring kafka functionality
- *
- * @author Max Tuzzolino
- */
-
 @RestController
-public class UploadedTestGroupController {
-    private static final Logger logger = LoggerFactory.getLogger(UploadedTestGroupController.class);
+public class ProducerExampleController {
+    private static final Logger logger = LoggerFactory.getLogger(ProducerExampleController.class);
 
     private final KafkaTemplate<String, String> template;
 
@@ -32,16 +23,8 @@ public class UploadedTestGroupController {
     private String topic;
 
     @Autowired
-    public UploadedTestGroupController(KafkaTemplate<String, String> template) {
+    public ProducerExampleController(KafkaTemplate<String, String> template) {
         this.template = template;
-    }
-
-    @KafkaListener(topics = "${consumer-topic}")
-    public void subscribeToEvents(ConsumerRecord<?, ?> cr) {
-        logger.info("------------------ MESSAGE ---------------------");
-        logger.info("Message Received on Topic: " + cr.topic());
-        logger.info(cr.value().toString());
-        logger.info("------------------------------------------------");
     }
 
     /**
@@ -64,7 +47,7 @@ public class UploadedTestGroupController {
     }
 
     /**
-     * Example json string payload
+     * Hardcoded example JSON for simple message
      */
     private final String jsonExample = "[\n" +
             "  {\n" +
