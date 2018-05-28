@@ -7,3 +7,4 @@ spring:
     bootstrap-servers: ${KAFKA_SERVERS:localhost:9092}
 consumer-topic: ${CONSUMER_TOPIC:TestTopic2}
 producer-topic: ${PRODUCER_TOPIC:TestTopic}
+message-count: ${MESSAGE_COUNT:100000}

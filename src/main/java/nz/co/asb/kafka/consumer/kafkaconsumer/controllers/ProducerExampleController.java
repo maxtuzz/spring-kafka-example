@@ -22,6 +22,9 @@ public class ProducerExampleController {
     @Value("${producer-topic}")
     private String topic;
 
+    @Value("${message-count}")
+    private String messageCount;
+
     @Autowired
     public ProducerExampleController(KafkaTemplate<String, String> template) {
         this.template = template;
@@ -36,7 +39,7 @@ public class ProducerExampleController {
     public ResponseEntity<String> startRandomMessageOnslaught() {
         long startTime = System.nanoTime();
 
-        IntStream.range(0, 40000).forEach(i -> template.send(topic, jsonExample));
+        IntStream.range(0, Integer.parseInt(messageCount)).forEach(i -> template.send(topic, jsonExample));
 
         long endTime = System.nanoTime();
         double l = (endTime - startTime) / 1000000;
