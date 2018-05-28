@@ -14,10 +14,15 @@ $ docker run -e KAFKA_GROUP_ID="whatever"
     \ asb-spring-kafka 
 ```
 
+### Test Consumer 
+Set `CONSUMER_TOPIC` to whatever topic you want to subscribe to. The listener will pick and print all message values to sysout. 
 
-### Test results 
+### Test Producer
 Running locally call:
 
 `$ curl -XPUT localhost:8080`
+
+
+This will trigger a message onslaught.
 
 In testing, it takes between 4-8s to produce 40,000 large JSON based messages. 
