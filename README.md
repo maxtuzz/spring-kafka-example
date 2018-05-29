@@ -48,4 +48,4 @@ Running locally call:
 
 This will trigger a message onslaught.
 
-In testing, it takes between 10-15 seconds to produce 100,000 large JSON based messages. 
+In testing, it takes between 10-15 seconds to produce 100,000 large JSON based messages on a standard local developer setup.  
